@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.conteiner {
+  max-width: 1920px;
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+.clockp {
+  padding: 10px 30px;
+  border: 1px solid aqua;
+  border-radius: 20px;
+  font-size: xx-large;
+  color: aqua;
+  background-color: black;
+}
+
+.clockdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slider {
+  padding: 50px 20px;
+  background-color: cornflowerblue;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  height: 400px;
+  position: relative;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+.slide.active img {
+  filter: brightness(0.8);
+}
+.slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 100%;
+  transition: width 0.5s;
+  /* height: 0; */
+  z-index: -1;
+}
+
+.slide.active {
+  width: 100%;
+  z-index: 0;
+}
+.slide div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(135, 206, 250, 0.7);
+  border-radius: 12px;
+  text-align: center;
+  max-width: 70%;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  color: transparent;
+  transition: all 0.7s;
+}
+.slide.active div {
+  display: block;
+  color: black;
+  width: auto;
+  height: auto;
+  opacity: 1;
+  padding: 20px;
+}
+.slides-wrapper:hover .slide div {
+  background-color: rgba(135, 206, 250, 0.9);
+}
+.slide h3 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.slides-wrapper:hover .slider-btns .btn {
+  background-color: rgba(0, 139, 139, 1);
+}
+.slides-wrapper {
+  position: relative;
+}
+.next {
+  rotate: 45deg;
+  right: 30px;
+}
+.prev {
+  left: 30px;
+  rotate: -45deg;
+}
+.sliderbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(97, 219, 179);
+  color: rgb(97, 219, 179);
+  width: 10px;
+  height: 10px;
+  border: 0.1px solid rgb(97, 219, 179);
+  border-radius: 10px;
+  margin-left: 20px;
+  opacity: 0.4;
+}
+.auto-slide-btns {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+.activebtn {
+  opacity: 1;
+}
